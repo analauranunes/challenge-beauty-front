@@ -29,7 +29,6 @@ function DashLogged({ setAuthenticated }) {
     history.push("/Login");
   }
 
-  console.log(user)
 
   return (
     <>
