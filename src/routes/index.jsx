@@ -7,11 +7,9 @@ import Login from "../pages/Login";
 
 function Routes() {
   const [authenticated, setAuthenticated] = useState(false);
-  const [tokenStorage, setTokenStorage] = useState();
 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("userToken"));
-    setTokenStorage(token);
 
     if (token) {
       return setAuthenticated(true);
@@ -30,7 +28,7 @@ function Routes() {
         />
       </Route>
       <Route exact path="/Dashboard">
-        <Dashboard authenticated={authenticated} setAuthenticated={setAuthenticated} tokenStorage={tokenStorage} />
+        <Dashboard authenticated={authenticated} setAuthenticated={setAuthenticated} />
       </Route>
     </Switch>
   );

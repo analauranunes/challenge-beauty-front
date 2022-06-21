@@ -6,28 +6,30 @@ import { FiLogOut } from "react-icons/fi";
 import { useHistory } from "react-router-dom";
 import ServicesList from "../ServicesList";
 import beautyLogo from "../../assets/beauty-logo.jpeg";
-import { Link } from "react-router-dom";
 
-function DashLogged({ setAuthenticated, tokenStorage }) {
+function DashLogged({ setAuthenticated }) {
   const [user, setUser] = useState();
   const history = useHistory();
+  const token = JSON.parse(localStorage.getItem("userToken"));
 
   useEffect(() => {
     baseUrl
       .get("users/me", {
         headers: {
-          Authorization: `Bearer ${tokenStorage}`,
+          Authorization: `Bearer ${token}`,
         },
       })
       .then((res) => setUser(res.data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [setUser]);
 
   function handleClick() {
     localStorage.clear();
     setAuthenticated(false);
     history.push("/Login");
   }
+
+  console.log(user)
 
   return (
     <>
