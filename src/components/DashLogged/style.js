@@ -45,4 +45,11 @@ export const StyledImg = styled.img`
   position: absolute;
   right: 5%;
   top: 90%;
+  transition: 1.5s;
+
+  :hover{
+    transition: 1.5s;
+    width: 70px;
+    height: 70px;
+  }
 `

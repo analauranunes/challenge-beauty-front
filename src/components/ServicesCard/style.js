@@ -9,13 +9,19 @@ const StyledLi = styled.li`
   gap: 8px;
   max-height: 320px;
 
-  h2 {
-      font-size: 20px;
-      color: white;
+  :hover {
+    overflow: hidden;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.5);
   }
 
-  span{
-      color: #f2a03d;
+  h2 {
+    font-size: 20px;
+    color: white;
+  }
+
+  span {
+    color: #f2a03d;
   }
 
   img {
